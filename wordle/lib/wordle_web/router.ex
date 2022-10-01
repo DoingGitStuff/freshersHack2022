@@ -18,6 +18,7 @@ defmodule WordleWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    live "/live/counter", CounterLive
   end
 
   # Other scopes may use custom stacks.
