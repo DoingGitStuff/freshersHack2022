@@ -12,7 +12,7 @@ defmodule Wordle.Words do
     tab = :ets.new(:words,[:set,:protected,read_concurrency: true])
     state = load_words_to_tab(tab)
     :persistent_term.put(Wordle.Words,state)
-    {:noreply, state}
+    {:noreply, state,:hibernate}
   end
 
   def load_words_to_tab(tab) do

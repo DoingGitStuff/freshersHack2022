@@ -1,6 +1,5 @@
 defmodule Wordle.Counter do
   use GenServer
-  alias Phoenix.PubSub
 
   def start_link(_opts) do
     GenServer.start_link(__MODULE__,0,name: __MODULE__)
@@ -34,7 +33,7 @@ defmodule Wordle.Counter do
 
   defp change(state,diff) do
     new = state + diff
-    {:reply,new,new,:hibernate}
+    {:reply,new,new}
     # with :ok <- PubSub.broadcast(Wordle.PubSub,@topic,new) do
     #   {:reply, new}
     # else

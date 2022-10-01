@@ -3,7 +3,7 @@ defmodule WordleWeb.CounterLive do
 
   def render(assigns) do
     ~H"""
-    <p> Count: <%= @count %> </p>
+    <p> Count: <%= @count %></p>
     <button phx-click="inc_count">+</button>
     <button phx-click="dec_count">-</button>
     """

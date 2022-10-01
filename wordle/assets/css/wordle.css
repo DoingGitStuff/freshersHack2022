@@ -1,0 +1,32 @@
+.correct {
+    background-color: rgb(63, 199, 63);
+}
+.present {
+    background-color: rgb(255, 200, 0);
+}
+.incorrect {
+    background-color: lightcoral;
+}
+.unchecked {
+    background-color: rgb(234, 225, 105);
+}
+.wordleBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    max-width: 400px;
+    
+}
+.wordle {
+    display: grid;
+    grid-template-columns: repeat(5,auto);
+    gap: 1px;
+    max-height: 500px;
+    overflow-y: auto;
+
+}
+.letter {
+    text-align: center;
+
+}
