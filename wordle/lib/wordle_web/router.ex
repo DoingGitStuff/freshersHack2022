@@ -19,6 +19,7 @@ defmodule WordleWeb.Router do
 
     get "/", PageController, :index
     live "/live/counter", CounterLive
+    live "/live/wordle", SingleLive
   end
 
   # Other scopes may use custom stacks.

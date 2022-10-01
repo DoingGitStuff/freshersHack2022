@@ -34,7 +34,7 @@ defmodule Wordle.Counter do
 
   defp change(state,diff) do
     new = state + diff
-    {:reply,new,new}
+    {:reply,new,new,:hibernate}
     # with :ok <- PubSub.broadcast(Wordle.PubSub,@topic,new) do
     #   {:reply, new}
     # else
