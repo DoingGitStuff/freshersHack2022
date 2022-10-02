@@ -4,6 +4,9 @@ defmodule Wordle.Word do
   def new() do
     %Word{word: Wordle.Words.random()}
   end
+  def new(word) do
+    %Word{word: word}
+  end
 
   def add_key(%Word{guesses: guesses}=word,key) do
     guess_no = length(guesses)
@@ -43,9 +46,12 @@ defmodule Wordle.Word do
 
   def check(%Word{}=wordle) do
     {prev_guesses,curr_guess} = curr_and_prev(wordle)
+    IO.inspect(prev_guesses,label: :prev)
+    IO.inspect(curr_guess,label: "curr")
     if length(curr_guess) == 5 do
       checked = Wordle.Words.check(wordle.word,curr_guess)
       new_guesses = prev_guesses ++ [checked] ++ [[]]
+      IO.inspect(checked,label: "checked")
       new_wordl = %{ wordle | guesses: new_guesses}
       correct? = Enum.all?(checked,fn
         {:correct,_} -> true

@@ -10,13 +10,33 @@
 .unchecked {
     background-color: rgb(234, 225, 105);
 }
-.wordleBox {
+.multi-wordle-box {
+    display: grid;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.wordle-status {
+    grid-row: 1;
+    grid-column: 2;
+    text-align: center;
+}
+.wordle-box {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
     max-width: 400px;
+    outline: 1px;
+    outline-color: black;
     
+}
+.wd-player {
+    grid-row: 2;
+    grid-column: 1;
+}
+.wd-opponent {
+    grid-row: 2;
+    grid-column: 3;
 }
 .wordle {
     display: grid;

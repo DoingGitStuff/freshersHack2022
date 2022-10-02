@@ -15,7 +15,8 @@ defmodule Wordle.Application do
       # Start the Endpoint (http/https)
       WordleWeb.Endpoint,
       Wordle.Counter,
-      Wordle.Words
+      Wordle.Words,
+      {Wordle.Lobby, name: Wordle.Lobby}
       # Start a worker by calling: Wordle.Worker.start_link(arg)
       # {Wordle.Worker, arg}
     ]
